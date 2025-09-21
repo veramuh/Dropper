@@ -6,6 +6,6 @@ public class DroppingMovement : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.down * speed * Time.deltaTime, Space.World);
+        transform.parent.Translate(Vector3.down * speed * Time.deltaTime, Space.World);
     }
 }

@@ -14,8 +14,13 @@ public class RestartScene : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+#if UNITY_EDITOR
             EditorApplication.isPlaying = false;
+#elif UNITY_WEBPLAYER 
+            Application.OpenURL(webplayerQuitURL);
+#else
             Application.Quit();
+#endif
         }
     }
 

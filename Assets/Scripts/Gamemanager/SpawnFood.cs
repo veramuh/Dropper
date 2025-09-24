@@ -6,33 +6,23 @@ public class SpawnFood : MonoBehaviour
     public LevelBounds levelBounds;
     GameObject foodInstance;
 
+    private float timer;
+    public float foodSpeed = 5f;
 
-    public float speed = 5f;
+    public float spawnTime = 1f;
+    Vector3 spawnPosition = new Vector3(0, 7, 0);
     float posY;
-
-    void Start()
-    {
-        foodInstance = Instantiate(food, new Vector3(0, 7, 0), Quaternion.identity);
-
-        foodInstance.transform.gameObject.SetActive(true);
-        foodInstance.transform.position = new Vector3(0, 7, 0);
-
-    }
 
     void Update()
     {
-        if (foodInstance != null)
+        timer += Time.deltaTime;
+        if (timer > spawnTime)
         {
+            foodInstance = Instantiate(food, spawnPosition, Quaternion.identity);
+            foodInstance.GetComponent<MoveDown>().speed = foodSpeed;
+            foodInstance.GetComponent<CheckBounds>().yMax = levelBounds.yMax;
 
-            posY = foodInstance.transform.position.y;
-
-            foodInstance.transform.Translate(Vector3.down * speed * Time.deltaTime, Space.World);
-
-            if (posY < levelBounds.yMax)
-            {
-                Destroy(foodInstance);
-                Debug.Log("Out of Bounds, Gameobject deleted.");
-            }
+            timer = 0f;
         }
     }
 }

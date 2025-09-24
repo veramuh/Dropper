@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     public void onPaddleTrigger(Collider2D other)
     {
-        Debug.Log("Hit from " + other.name);
+        // Debug.Log("Hit from " + other.name);
         countDroppings++;
         counterText.SetText(countDroppings + "");
 

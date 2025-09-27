@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     private TextMeshPro counterText;
     private TextMeshPro gameoverText;
     private int countDroppings;
-    private int maxDroppings = 3;
+    // private int maxDroppings = 3;
+
     void Start()
     {
         counterText = counter.GetComponent<TextMeshPro>();
@@ -31,9 +32,9 @@ public class GameManager : MonoBehaviour
         countDroppings++;
         counterText.SetText(countDroppings + "");
 
-        if (countDroppings >= maxDroppings)
-        {
-            gameoverText.SetText("Won");
-        }
+        // if (countDroppings >= maxDroppings)
+        // {
+        //     gameoverText.SetText("Won");
+        // }
     }
 }

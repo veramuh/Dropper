@@ -196,8 +196,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   yMin: 6
   yMax: -4
-  xMin: 3
-  xMax: -3
+  xMin: -3
+  xMax: 3
 --- !u!114 &136930595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   food: {fileID: 71918352088527162, guid: 235f4f476229f43cd8a8b5d3f111fa02, type: 3}
-  levelBounds: {fileID: 136930594}
   foodSpeed: 5
   spawnTime: 1.2
 --- !u!114 &136930596
@@ -226,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63b0f4bac7ce42fa8b73704842002d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lap: 15
+  gameCountDown: 12
   gameTimer: {fileID: 1653635453}
 --- !u!1 &169574543
 GameObject:
@@ -1146,7 +1145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  GameManager: {fileID: 0}
+  GameManager: {fileID: 136930593}
 --- !u!1 &1565043904
 GameObject:
   m_ObjectHideFlags: 0

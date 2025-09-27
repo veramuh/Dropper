@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MoveDown : MonoBehaviour
 {
+    [HideInInspector]
     public float speed;
 
     void Update()

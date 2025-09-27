@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CheckBounds : MonoBehaviour
 {
+    [HideInInspector]
     public float yMax;
     float posY;
 

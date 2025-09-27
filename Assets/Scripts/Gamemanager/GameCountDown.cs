@@ -4,14 +4,14 @@ using System;
 public class GameCountDown : MonoBehaviour
 {
     private float timer;
-    public float lap;
+    public float gameCountDown;
     public GameObject gameTimer;
     private TextMeshPro timerText;
 
     void Start()
     {
         timerText = gameTimer.GetComponent<TextMeshPro>();
-        timer = lap + 0.5f;
+        timer = gameCountDown + 0.5f;
     }
 
     void Update()
@@ -22,7 +22,7 @@ public class GameCountDown : MonoBehaviour
 
         if (timer < 0)
         {
-            timer = lap + 0.5f;
+            timer = gameCountDown + 0.5f;
             Debug.Log("Restart");
             RestartScene.RestartThisScene();
         }

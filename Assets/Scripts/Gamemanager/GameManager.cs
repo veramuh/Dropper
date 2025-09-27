@@ -6,14 +6,12 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject counter;
-    public GameObject paddle;
     public GameObject gameover;
-
+    public GameObject counter;
     private TextMeshPro counterText;
     private TextMeshPro gameoverText;
     private int countDroppings;
-    // private int maxDroppings = 3;
+    public float plateSpeed = 5f;
 
     void Start()
     {
@@ -28,13 +26,7 @@ public class GameManager : MonoBehaviour
 
     public void onPaddleTrigger(Collider2D other)
     {
-        // Debug.Log("Hit from " + other.name);
         countDroppings++;
         counterText.SetText(countDroppings + "");
-
-        // if (countDroppings >= maxDroppings)
-        // {
-        //     gameoverText.SetText("Won");
-        // }
     }
 }

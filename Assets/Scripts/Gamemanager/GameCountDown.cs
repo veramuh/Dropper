@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
+
 public class GameCountDown : MonoBehaviour
 {
     private float timer;
@@ -24,7 +26,9 @@ public class GameCountDown : MonoBehaviour
         {
             timer = gameCountDown + 0.5f;
             Debug.Log("Restart");
-            RestartScene.RestartThisScene();
+            // EndOrRestartGame.RestartThisScene();
+            SceneManager.LoadScene(0); // TODO
+
         }
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
-public class RestartScene : MonoBehaviour
+public class EndOrRestartGame : MonoBehaviour
 {
 
     void Update()
@@ -14,6 +14,22 @@ public class RestartScene : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            EndGame();
+        }
+
+
+    }
+
+
+    public static void RestartThisScene()
+    {
+        SceneManager.LoadScene(1);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public static void EndGame()
+    {
+        {
 #if UNITY_EDITOR
             EditorApplication.isPlaying = false;
 #elif UNITY_WEBPLAYER 
@@ -23,11 +39,4 @@ public class RestartScene : MonoBehaviour
 #endif
         }
     }
-
-
-    public static void RestartThisScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
 }

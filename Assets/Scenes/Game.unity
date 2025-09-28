@@ -179,9 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023d4a60324b14b168f94c91590d8d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: {fileID: 1381198927}
-  paddle: {fileID: 1535580487}
   gameover: {fileID: 1294659838}
+  counter: {fileID: 1381198927}
+  plateSpeed: 5
 --- !u!114 &136930594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63b0f4bac7ce42fa8b73704842002d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameCountDown: 12
+  gameCountDown: 5
   gameTimer: {fileID: 1653635453}
 --- !u!1 &169574543
 GameObject:

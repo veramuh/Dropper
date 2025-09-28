@@ -1,19 +1,20 @@
 using UnityEngine;
 using TMPro;
 using System;
-using UnityEngine.SceneManagement;
 
 public class GameCountDown : MonoBehaviour
 {
     private float timer;
-    public float gameCountDown;
+    public float gameDuration;
     public GameObject gameTimer;
     private TextMeshPro timerText;
+
+    public ManageScenes manageScenes;
 
     void Start()
     {
         timerText = gameTimer.GetComponent<TextMeshPro>();
-        timer = gameCountDown + 0.5f;
+        timer = gameDuration + 0.5f;
     }
 
     void Update()
@@ -24,11 +25,9 @@ public class GameCountDown : MonoBehaviour
 
         if (timer < 0)
         {
-            timer = gameCountDown + 0.5f;
-            Debug.Log("Restart");
-            // EndOrRestartGame.RestartThisScene();
-            SceneManager.LoadScene(0); // TODO
-
+            timer = gameDuration + 0.5f;
+            manageScenes.timeOutGame();
         }
     }
+
 }
